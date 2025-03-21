@@ -1,0 +1,40 @@
+{
+    "name": "Flutter Android Development",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "installZsh": "true",
+        "username": "vscode",
+        "userUid": "1000",
+        "userGid": "1000",
+        "upgradePackages": "true"
+      }
+    },
+    "forwardPorts": [3000, 5037, 5554, 5555, 8080, 9100],
+    "portsAttributes": {
+      "5037": {
+        "label": "ADB Server"
+      },
+      "5554": {
+        "label": "Emulator ADB Port 1"
+      },
+      "5555": {
+        "label": "Emulator ADB Port 2"
+      }
+    },
+    "postCreateCommand": "flutter doctor",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "dart-code.dart-code",
+          "dart-code.flutter",
+          "aksharpatel47.vscode-flutter-helper"
+        ],
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "bash"
+        }
+      }
+    }
+  }
